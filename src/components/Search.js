@@ -1,16 +1,16 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-
+import styles from "../search.module.css";
 const Search=()=>{
     return (
         <form action="/" method="GET">
             <input
                 type="text"
-                class="search-input"
+                className={styles.searchInput}
                 placeholder="search..."
                 name="search"
             />
-            <button type="submit" className="search-btn"><FaSearch/></button>
+            <button type="submit" className={styles.searchBtn}><FaSearch/></button>
         </form>
     );
 }

@@ -1,39 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200;1,400&display=swap');
-* {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    -webkit-transition: .2s linear;
-    transition: .2s linear;
-}
-
-html {
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-}
-
-html::-webkit-scrollbar {
-    width: 1rem;
-}
-
-html::-webkit-scrollbar-track {
-    background: #fff;
-}
-
-html::-webkit-scrollbar-thumb {
-    background: #10221b;
-}
-
-
-
 
 .heading {
     text-align: center;
@@ -57,20 +21,26 @@ html::-webkit-scrollbar-thumb {
     align-items: center;
 }
 
-.header.active {
-    background: #fff;
-    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+.bars{
+    position: absolute;
+    left: 4%;
+    transform: scale(3);
+    background-color: transparent;
+    color: #219150;
 }
 
-.header .logo {
+.logo {
     margin-right: auto;
     font-size: 2.5rem;
     color: #10221b;
     font-weight: bolder;
+    text-decoration: none;
 }
 
-.header .logo i {
+.logo:hover{
+    color: #10221b;
+}
+.logo i {
     color: #219150;
 }
 
@@ -97,56 +67,39 @@ html::-webkit-scrollbar-thumb {
     inset -4px -4px 6px 0 rgba(255,255,255,.2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
 }
-.FaSearch .search-input{
-    background: transparent;
-    border: none;
-    outline:none;
-    width: 400px;
-    font-weight: 500;
-    font-size: 16px;
-    transition: 0.8s;
 
-}
-.search-btn {
-    color: #219150;
-    background: transparent;
-}
 
-.header .navbar a {
-    margin-left: 2rem;
-    font-size: 1.7rem;
-    color: #10221b;
-}
-
-.header .navbar a:hover {
-    color: #219150;
-}
-
-.header .navbar #nav-close {
-    font-size: 5rem;
-    cursor: pointer;
-    color: #10221b;
-    display: none;
-}
-.header .icons{
-    display: flex;
-}
-.header .icons a,
-.header .icons div {
+.navbar a {
     font-size: 2.5rem;
     margin-left: 2rem;
     cursor: pointer;
     color: #10221b;
+    text-decoration: none;
 }
 
-.header .icons a:hover,
-.header .icons div:hover {
+.navbar a:hover {
     color: #219150;
 }
 
-.header #menu-btn {
-    display: none;
+
+.icons{
+    display: flex;
 }
+.icons a,
+.icons div {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    color: #10221b;
+    text-decoration: none;
+}
+
+.icons a:hover,
+.icons div:hover {
+    color: #219150;
+}
+
+
 .btn {
     margin-top: 1rem;
     display: inline-block;
@@ -170,7 +123,7 @@ html::-webkit-scrollbar-thumb {
     100% {transform: skew(0deg,0deg);}
 }
 
-.header .FaSearch:hover{
+.FaSearch:hover{
     animation: hoverShake 0.15s linear 1;
 }
 
@@ -180,62 +133,26 @@ html::-webkit-scrollbar-thumb {
     .header {
         padding: 2rem;
     }
+    .bars{
+        margin-right: auto;
+        position: unset;
+    }
+    .logo{
+        margin-right: 0;
+    }
+
 }
 @media (max-width: 991px) {
     html {
         font-size: 55%;
     }
 }
-@media (max-width: 768px) {
-    .header #menu-btn {
-        display: inline-block;
-    }
-    .header .navbar {
-        position: fixed;
-        top: 0;
-        left: -110%;
-        background: #fff;
-        z-index: 10000;
-        width: 35rem;
-        height: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-        flex-flow: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
-    .header .navbar.active {
-        left: 0;
-        -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
-        box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
-    }
-    .header .navbar #nav-close {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 2rem;
-    }
-    .header .navbar a {
-        margin: 1rem 0;
-        font-size: 3rem;
-    }
-    .header .navbar #nav-close {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 2rem;
-    }
-}
+
 @media (max-width: 450px) {
     html {
         font-size: 50%;
+    }
+    .logo{
+        margin-right: 55%;
     }
 }

@@ -3,7 +3,7 @@ import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { FaQuoteRight } from 'react-icons/fa';
 import Slide from './Slide';
 import data from "../../data";
-
+import styles from "../../slider.module.css";
 
 const Slider = () => {
 
@@ -27,16 +27,16 @@ const Slider = () => {
 
     //let slide = slide_im.find(image=>image._id==index)
     //console.log(index);
-    return <section className="section">
+    return <section className={styles.section}>
 
             {slide_im.map((slider_img,slider_imgIndex)=>{
                     const {_id,title,url}=slider_img;
-                    let position = "nextSlide";
+                    let position = styles.nextSlide;
                     if(slider_imgIndex===index){
-                        position="activeSlide";
+                        position= styles.activeSlide;
                     }
                     if(slider_imgIndex===index-1 || (index===0 && slider_imgIndex===slide_im.length-1)){
-                        position="lastSlide";
+                        position= styles.lastSlide;
                     }
 
                         return(
@@ -48,10 +48,10 @@ const Slider = () => {
 
             )}
 
-            <button className="prev" onClick={()=> setIndex(index-1)}>
+            <button className={styles.prev} onClick={()=> setIndex(index-1)}>
                 <FiChevronLeft />
             </button>
-            <button className="next" onClick={()=>setIndex(index+1)}>
+            <button className={styles.next} onClick={()=>setIndex(index+1)}>
                 <FiChevronRight />
             </button>
 
