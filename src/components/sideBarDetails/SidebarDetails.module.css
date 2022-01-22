@@ -1,0 +1,35 @@
+.body {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.49);
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+.body:hover{
+    color: white;
+}
+.objet {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+.objet:hover{
+    color: #45b388;
+}
+@media (max-width: 800px) {
+    .body {
+        font-size: 1.2rem;
+    }
+    .objet {
+        font-size:1rem;
+    }
+
+}
+@media (max-width: 400px) {
+    .body {
+        font-size: 1rem;
+    }
+    .objet {
+        font-size:0.8rem;
+    }
+
+}

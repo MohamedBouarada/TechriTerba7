@@ -4,29 +4,46 @@ import {useState} from "react";
 import {Button, Offcanvas} from "react-bootstrap";
 import useWindowDimensions from "../../utilities/ScreenDimensions";
 
-export const Sidebar=({show,handleClose})=>{
-    const {  width } = useWindowDimensions();
 
+import sideBarItems from "./dataSideBar";
+import {SidebarElement} from "./SidebarElement";
+import {SidebarDetail} from "../sideBarDetails/SidebarDetail";
+import Search from "../Search";
+
+
+
+export const Sidebar=({show,handleClose})=>{
+    const { width } = useWindowDimensions();
+
+    const list=width>=1200? sideBarItems.filter(elt=>elt._id>2):sideBarItems;
     return (
         <>
 
 
             <Offcanvas show={show} onHide={handleClose} className={styles.sideBar}>
                 <Offcanvas.Header closeButton closeVariant={"white"} className={styles.title}>
-                    <Offcanvas.Title>Techri Terbah</Offcanvas.Title>
+                    <Offcanvas.Title>
+                        <em><strong>SARBI ROUHEK</strong></em></Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body className={styles.body}>
                         <ul>
                             {width<1200 && (
-                                <>
-                                <li>Panier</li>
-                                <li>Profile</li>
-                                </>
+                                <li><Search/></li>)
+                            }
+                            {list.map((sideBarItem)=>{
+                                    const {_id,title,icon}=sideBarItem;
+                                    return(
+                                        <li>
+                                            <SidebarElement
+                                                title={title}
+                                                icon={icon} />
+
+                                        </li>
+                                    );
+                            }
                             )}
 
-                            <li>zeb</li>
-                            <li>zab</li>
-                            <li>zib</li></ul>
+                        </ul>
                 </Offcanvas.Body>
             </Offcanvas>
         </>

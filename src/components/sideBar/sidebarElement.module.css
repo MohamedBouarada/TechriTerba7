@@ -1,0 +1,45 @@
+.body {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.49);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.icons {
+    width: 5px;
+}
+.title {
+    padding-left: 10px;
+
+}
+.faAngleRight {
+    color: #e3ecc5;
+    float: right;
+    margin-right: -4px;
+    display: inline-block;
+    font-weight: 400;
+    position: relative;
+
+}
+.body:hover{
+    color: white;
+}
+@media (max-width: 800px) {
+    .body {
+        font-size: 1.5rem;
+    }
+    .faAngleRight *{
+        margin-right: -4px;
+        display: inline-block;
+        font-weight: 100;
+    }
+}
+@media (max-width: 400px) {
+    .body {
+        font-size: 1.2rem;
+    }
+    .faAngleRight *{
+        margin-right: -4px;
+        display: inline-block;
+        font-weight: 100;
+    }
+}

@@ -11,7 +11,7 @@ const Home=()=>{
     const handleShow = () => setShow(true);
     return(
         <>
-            <Navbar handleShow={handleShow}/>
+            <Navbar handleShow={handleShow} show={show}/>
             <Slider />
             <Sidebar handleClose={handleClose} show={show}/>
 
