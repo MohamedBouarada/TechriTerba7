@@ -1,0 +1,171 @@
+.productDetails{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 7rem;
+    margin: 10rem auto;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    text-align: center;
+    background-color: #f6f2f1;
+    margin-bottom: 2rem;
+    height: 45rem;
+    padding: 3rem;
+
+    border-radius: 30px;
+    box-shadow: var(--dark-shadow);
+}
+.main img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.otherimages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+.otherimg {
+    height: 10rem;
+    background-color: #f6f2f1;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: var(--dark-shadow);
+}
+.otherimg img {
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+.price {
+
+    font-size: 2rem;
+    font-weight: 600;
+    color: hsl(355, 88%, 37%);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.right{
+    position: relative;
+    z-index: 1;
+}
+.name{
+
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+    font-size: 3rem;
+    font-weight: 600;
+    color: rgba(238, 5, 24, 0.62);
+
+
+}
+.description{
+    text-align: left;
+    margin-bottom: 5rem;
+
+    font-size: 2rem;
+    font-weight: 500;
+    color: #3a3b3c;
+}
+.form {
+    margin-bottom: 2rem;
+}
+.form div {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.form span {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-60%);
+    font-size: 1.3rem;
+    z-index: 0;
+    pointer-events: none;
+}
+.select {
+    font-family: 'Poppins', sans-serif;
+    width: 6rem;
+    padding: 0.3rem;
+    border: 1px solid #3a3b3c;
+    appearance: none;
+    outline: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+.inStock{
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+.inStockYes {
+    color: #219150;
+    font-weight: 600;
+}
+.inStockNo {
+    color: #b00b1a;
+    font-weight: 600;
+}
+.linkDisabled {
+    display: inline-block;
+
+    padding: 0.8rem 4rem;
+
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+
+    cursor: default;
+    pointer-events: none;
+    color: #fff;
+    background: #3a3b3c;
+}
+.link {
+    display: inline-block;
+    background: #ff4545;
+    padding: 0.8rem 4rem;
+    color: #fff;
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+}
+.heading{
+    text-transform: uppercase;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #3a3b3c;
+    font-weight: 600;
+
+}
+.similarProducts {
+    height: 40em;
+    overflow: scroll;
+    font-family: 'Lato', sans-serif;
+    margin: 0 3em;
+    background-color: white;
+}
+@media (max-width: 650px) {
+    .productDetails{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .left{
+        width: 100%;
+        height: 45rem;
+    }
+    .otherimg{
+        width: 6rem;
+        height: 6rem;
+    }
+    .right{
+        margin-top: 5rem;
+    }
+}
