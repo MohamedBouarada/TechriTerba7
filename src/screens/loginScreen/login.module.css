@@ -1,0 +1,10 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+
+
+    background: url('../../images/login-bg.jpg') center/cover no-repeat fixed;
+}

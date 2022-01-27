@@ -16,10 +16,15 @@ export const Products = ({category,title}) => {
 
             {list.map((item, index) => (
 
-                <div className={styles.ProductItem} key={index}>
-                    <div className={styles.ImgContainer} >
+                <div
 
-                            <img src={item.image} alt={item.name}/>
+                    className={styles.ProductItem} key={index}>
+                    <div
+                        className={styles.ImgContainer} >
+                            <Link to={`/productDetails/${item.id}`}>
+                                <img src={item.image} alt={item.name}/>
+                            </Link>
+
 
                         <div className={styles.IconWrapper}>
                             <FaShoppingCart className={styles.icon}/>

@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
 import styles from './productDetails.module.css';
-import productData from '../products/ProductData';
-import Rating from '../rating/Rating';
+import productData from '../../components/products/ProductData';
+import Rating from '../../components/rating/Rating';
 import {FaChevronDown} from "react-icons/all";
 import {green} from "tailwindcss/colors";
-import {Link} from "react-router-dom";
-import {Products} from "../products/Products";
+import {Link, useParams} from "react-router-dom";
+import {Products} from "../../components/products/Products";
+import {Form,FormSelect} from "react-bootstrap";
+const ProductDetails=()=>{
+    let id=useParams().id;
 
-const ProductDetails=({id})=>{
+
+    console.log(id);
 
     const product=productData.filter(elt=>elt.id==id);
     const [qty, setQty] = useState(1);
@@ -51,20 +55,20 @@ const ProductDetails=({id})=>{
                             </div>
 
                             {countInStock > 0 && (
-                                <form className={styles.form}>
+                                <Form className={styles.form}>
                                     <div>
-                                        <select className={styles.select} value={qty} onChange={e => setQty(e.target.value)}>
+                                        <FormSelect className={styles.select} value={qty} onChange={e => setQty(e.target.value)}>
                                             {[...Array(countInStock).keys()].map(x => (
                                                 <option key={x + 1} value={x + 1}>
                                                     {x + 1}
                                                 </option>
                                             ))}
-                                        </select>
+                                        </FormSelect>
                                         <span>
                                             <FaChevronDown />
                                         </span>
                                     </div>
-                                </form>
+                                </Form>
                             )}
                             <div className={styles.inStock}>
                                 Status: {product.countInStock === 0 ?<label className={styles.inStockNo}>Out of Stock</label> : <label className={styles.inStockYes}>In Stock</label>}
